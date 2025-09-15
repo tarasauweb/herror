@@ -172,7 +172,7 @@ body{
     margin-left: 14px;
 }
 .offer__btn_steam:hover {
-    transform: scale(1.01);
+    padding: 0 1.5%;
     background-color: #4CAF1F;
     box-shadow: 0 8px 20px rgba(63, 140, 27, 0.6);
     transition: all 0.5s;
@@ -185,7 +185,7 @@ body{
     transition: all 0.5s;
 }
 .offer__btn_kit:hover {
-    transform: scale(1.01);
+    padding: 0 1.5%;
     box-shadow: 0 8px 20px rgba(87, 63, 255, 0.6);
     transition: all 0.5s;
 }

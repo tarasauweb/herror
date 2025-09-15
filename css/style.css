@@ -164,7 +164,7 @@ body{
 .offer__btn_steam{
     background: url('../img//buttons-fon/steam.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: inherit;
     background-color: #3F8C1B;
     transition: all 0.5s;
 }
@@ -180,7 +180,7 @@ body{
 .offer__btn_kit{
     background: url('../img/buttons-fon/kit.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: inherit;
     background-color: #4727FA;
     transition: all 0.5s;
 }

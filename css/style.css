@@ -145,9 +145,8 @@ body{
 .offer__btn{
     border-radius: 15px;
     max-width: 868px;
-    height: 69px;
+    height: 64px;
     width: 48%;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
     align-items: center;

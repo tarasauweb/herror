@@ -275,6 +275,12 @@ body{
     html, body {
         overflow-x: hidden;
     }
+    body{
+        background: url('../img/background-1024.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+    }
     .header{
         position: relative;
         padding: 0;
@@ -309,5 +315,63 @@ body{
     }
     .menu.active {
         right: 0;
+    }
+}
+@media screen and (max-width:768px) {
+    body{
+        background: url('../img/background-768.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+    }
+    .offer {
+        margin-top: 40vh;
+    }
+    .offer__text{
+        flex-direction: column;
+    }
+    .offer__title{
+        font-size: 50px;
+    }
+    .offer__adv{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:576px) {
+    .offer {
+        margin-top: 30vh;
+    }
+   .offer__buttons{
+    margin-top: 20px;
+    flex-direction: column;
+   }
+   .offer__btn {
+    width: 100%;
+   }
+   .offer__btn:first-child{
+    margin-bottom: 20px;
+   }
+}
+
+@media screen and (max-width:480px) {
+   body{
+        background: url('../img/background-420.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+    }
+    .offer{
+        margin-top: 10vh;
+    }
+    .offer__title{
+        font-size: clamp(50px, 15vw, 100px);
+        line-height: 115%;
+    }
+    .offer__adv{
+        margin-top: 5vh;
+        font-size: clamp(20px, 6vw, 30px);
+    }
+    .offer__buttons{
+        margin-top: 10vh;
     }
 }

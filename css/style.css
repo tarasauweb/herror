@@ -1,0 +1,116 @@
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Gagalin", sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Gagalin';
+  src: url('/fonts/Gagalin-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter-SemiBold';
+  src: url('/fonts/Inter-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+a {
+    text-decoration: none !important;
+}
+li{
+    list-style: none;
+}
+button{
+    display: block;
+    outline: none;
+    border: none;
+}
+body{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+}
+.container {
+    max-width: 1770px;
+    width: 100%0;
+    margin: 0 auto;
+}
+
+
+/* header */
+.header {
+    padding: 20px;
+}
+.menu{
+    border-radius: 15px;
+    width: 1770px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background: #000;
+    padding: 0 85px;
+}
+.menu__items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+.menu__link{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    position: relative;
+}
+.menu__link::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background-color: #fff;
+    bottom: -5px;
+    transition: all 0.5s;
+}
+.menu__link:hover::after {
+    width: 100%;
+    transition: all 0.5s;
+}
+
+
+
+
+@media screen and (min-width:1441px) {
+    body{
+        background: url('../img/background-main.webp') no-repeat center center /cover;
+        object-fit: cover;
+    }
+}

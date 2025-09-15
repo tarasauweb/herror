@@ -130,6 +130,7 @@ body{
     font-size: clamp(48px, 8vw, 150px);
     color: #fff;
     margin: 0;
+    animation: glitch 1s infinite;
 }
 .offer__adv{
     font-family: var(--second-family);
@@ -237,6 +238,62 @@ body{
 .overlay.active{
     display: block;
 }
+/* Дублируем текст через псевдоэлементы */
+.offer__title::before,
+.offer__title::after {
+    content: attr(data-text); /* возьмём текст из атрибута */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+    background: transparent;
+}
+
+.offer__title::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    animation: glitchTop 1s infinite linear alternate-reverse;
+}
+
+.offer__title::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    animation: glitchBottom 1s infinite linear alternate-reverse;
+}
+
+/* Основная анимация */
+@keyframes glitch {
+    0% { transform: none; }
+    20% { transform: skew(0.5deg); }
+    40% { transform: translate(-2px, 2px); }
+    60% { transform: skew(-0.5deg); }
+    80% { transform: translate(2px, -1px); }
+    100% { transform: none; }
+}
+
+/* Верхний слой */
+@keyframes glitchTop {
+    0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
+    20% { clip-path: inset(0 0 70% 0); transform: translate(2px, -1px); }
+    40% { clip-path: inset(0 0 60% 0); transform: translate(-1px, 1px); }
+    60% { clip-path: inset(0 0 50% 0); transform: translate(1px, -2px); }
+    80% { clip-path: inset(0 0 40% 0); transform: translate(-2px, 2px); }
+    100% { clip-path: inset(0 0 80% 0); transform: translate(0, 0); }
+}
+
+/* Нижний слой */
+@keyframes glitchBottom {
+    0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
+    20% { clip-path: inset(70% 0 0 0); transform: translate(-2px, 1px); }
+    40% { clip-path: inset(60% 0 0 0); transform: translate(1px, -1px); }
+    60% { clip-path: inset(50% 0 0 0); transform: translate(-1px, 2px); }
+    80% { clip-path: inset(40% 0 0 0); transform: translate(2px, -2px); }
+    100% { clip-path: inset(80% 0 0 0); transform: translate(0, 0); }
+}
+
+
 @media screen and (min-width:1441px) {
     body{
         background: url('../img/background-main.webp');

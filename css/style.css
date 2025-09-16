@@ -9,7 +9,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html, body {
+     overflow-x: hidden;
+}
 /* Gagalin */
 @font-face {
   font-family: 'Gagalin';
@@ -61,6 +63,8 @@ body{
     color: #fff;
     width: 100%;
     height: 100vh;
+}
+body.active{
     overflow: hidden !important;
 }
 .container {
@@ -193,7 +197,7 @@ body{
 .burger-menu {
   width: 40px;
   height: 40px;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   display: none;
   z-index: 12;
@@ -262,6 +266,9 @@ body{
     text-shadow: -2px 0 blue;
     animation: glitchBottom 1s infinite linear alternate-reverse;
 }
+.offer.active{
+    opacity: 0;
+}
 
 /* Основная анимация */
 @keyframes glitch {
@@ -327,11 +334,8 @@ body{
     }
     
 }
-
 @media screen and (max-width:992px) {
-    html, body {
-        overflow-x: hidden;
-    }
+    
     body{
         background: url('../img/background-1024.webp');
         background-repeat: no-repeat;
@@ -344,7 +348,7 @@ body{
         height: 80px;
     }
     .menu{
-        padding: 40px 0 0 0;
+        padding: 0px 0 0 0;
         display: block;
         max-width: initial;
         width: 100%;
@@ -358,7 +362,7 @@ body{
 }
     .menu__items{
         flex-direction: column;
-        height: 90vh;
+        height:100vh;
         align-items: center;
         justify-content: space-evenly;
         background: url('../img/background-menu.webp');
@@ -411,11 +415,13 @@ body{
 }
 
 @media screen and (max-width:480px) {
+
    body{
         background: url('../img/background-420.webp');
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: center;
+         overflow-x: hidden;
     }
     .offer{
         margin-top: 10vh;

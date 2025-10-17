@@ -60,12 +60,8 @@ body{
     font-weight: 700;
     font-size: 18px;
     color: #fff;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     background: url('../img/background.jpg') no-repeat center center /cover;
+    
 }
 body.active{
     overflow: hidden !important;
@@ -76,15 +72,28 @@ body.active{
     margin: 0 auto;
     padding: 0px 20px;
 }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
 
+/* header */
+.header{
+    padding-top: 20px;
+}
 /* offer */
+.offer{
+    padding-bottom: 20px;
+}
 .offer__title{
     font-family: var(--second-family);
     font-weight: 400;
-    font-size: 107px;
+    font-size: clamp(32px, 6vw, 107px);
     color: #f9f9f7;
     text-align: center;
-    
+    margin: 0;
 }
 .offer__subtitle{
     font-family: var(--font-family);
@@ -95,7 +104,7 @@ body.active{
     margin-top: 20px;
 }
 .offer__blocks{
-    margin-top: 110px;
+    margin: 20px 0px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -104,12 +113,12 @@ body.active{
 .offer__block{
     width: 100%;
     max-width: 270px;
-    margin-bottom: 50px;
+    /* margin-bottom: 20px; */
 }
 .offer__adv{
     font-family: var(--font-family);
     font-weight: 900;
-    font-size: 32px;
+    font-size: clamp(20px, 2.3vw, 32px);
     color: #f9f9f7;
 }
 .offer__hr{
@@ -121,7 +130,7 @@ body.active{
 .offer__info{
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 18px;
+    font-size: clamp(14px, 1.2vw, 18px);
     color: #f9f9f7;
 }
 .offer__info:last-child .offer_in{
@@ -143,7 +152,7 @@ body.active{
 }
 .footer{
     background-color: #6373F4;
-    height: 250px;
+    height: clamp(100px, 18vh, 250px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,9 +171,18 @@ body.active{
     margin-top: 5px;
     margin-right: 15px;
 }
-@media screen and (max-width:1135px) {
-   body{
-    height: auto;
+@media screen and (min-width:1440px) {
+   .header{
+        padding-top: 100px;
+   }
+}
+@media screen and (max-width:1439px) {
+    body{
+        height: auto;
+        min-height: 100vh;
+   }
+   .header{
+        padding-top: 20px;
    }
 }
 @media screen and (max-width:768px) {

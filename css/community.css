@@ -167,3 +167,17 @@ body.active{
     height: auto;
    }
 }
+@media screen and (max-width:768px) {
+   .offer__title{
+    font-size: 70px;
+   }
+}
+@media screen and (max-width:480px) {
+   .offer__title{
+        font-size: 55px;
+   }
+   .footer__link{
+        flex-direction: column;
+        font-size: 48px;
+   }
+}
